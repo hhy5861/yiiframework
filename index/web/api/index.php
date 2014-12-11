@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL ^E_NOTICE);
-defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_DEBUG') or define('YII_DEBUG', false);
 defined('YII_ENV')   or define('YII_ENV', 'dev');
 
 require(dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.php');
