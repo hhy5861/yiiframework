@@ -9,7 +9,6 @@ require(dirname(dirname(dirname(dirname(__FILE__)))) . '/common/config/public/bo
 require(dirname(dirname(dirname(__FILE__)))          . '/config/api/bootstrap.php');
 
 $config = yii\helpers\ArrayHelper::merge(require(dirname(dirname(dirname(dirname(__FILE__)))) . '/common/config/public/main.php'),
-                                         require(dirname(dirname(dirname(dirname(__FILE__)))) . '/common/config/api/main.php'),
                                          require(dirname(dirname(dirname(__FILE__)))          . '/config/api/main.php')
 										);
 

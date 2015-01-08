@@ -1,7 +1,6 @@
 <?php
 $params = array_merge(
                       require(dirname(dirname(dirname(dirname(__FILE__)))) . '/common/config/public/params.php'),
-                      require(dirname(dirname(dirname(dirname(__FILE__)))) . '/common/config/api/params.php'),
                       require(dirname(__FILE__) . '/params.php')
                      );
 

@@ -9,6 +9,10 @@
 namespace api\library;
 
 
-class Test {
-
+class Test
+{
+	public static function getData()
+	{
+		return [1,2,3];
+	}
 } 

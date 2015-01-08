@@ -6,22 +6,18 @@
  * Time: 15:01
  */
 
-namespace app\components\cache;
+namespace app\components\service;
 
 use Yii;
-use yii\base\Exception;
+use yii\base\ErrorException;
 
-class Cache implements ICache
+class Cache implements IService
 {
-    private static $time;
-
     private static $key;
 
     private static $param = [];
 
     private static $_instance;
-
-    private static $defaultKey;
 
     public static $setCacheTime;
 
@@ -29,9 +25,7 @@ class Cache implements ICache
 
     public static function instance(array $param)
     {
-        self::$defaultKey   = 'j*slkd92#';
         self::$param        = $param;
-        self::$time         = time();
         self::$setCacheTime = $param['expire'] ? $param['expire'] : Yii::$app->params['CACHE_TIME'];
 
         !self::$_instance && self::$_instance = new self();
@@ -49,12 +43,13 @@ class Cache implements ICache
      */
     private static function _setKey()
     {
-	    if(!self::$param['key'])
+	    if(!isset(self::$param['key']) || !self::$param['key'])
 	    {
-			return new Exception('The cache key is not set');
+			return new ErrorException('The cache key is not set');
 	    }
 
-        self::$key = md5(self::$defaultKey . self::$param ['key']);
+	    $defaultKey   = 'j*slkd92#';
+        self::$key = md5($defaultKey . self::$param ['key']);
         return self::$key;
     }
 

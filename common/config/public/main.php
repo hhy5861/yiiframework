@@ -16,30 +16,30 @@ return [
                                          'dataTimeout' => 30,
                                         ],
 
-                        'memCache'   => [
+                         'memCache'  => [
                                          'class'        => 'yii\caching\MemCache',
                                          'useMemcached' => true,
                                          'servers'      => [
-                                                            [
-                                                             'host'         => '127.0.0.1',
-                                                             'port'         => 11211,
-                                                             'weight'       => 60,
+                                                             [
+                                                              'host'         => '127.0.0.1',
+                                                              'port'         => 11211,
+                                                              'weight'       => 60,
+                                                             ],
                                                             ],
-                                                           ],
-                                        ],
+                                         ],
 
-                       'mongodb'     => [
+                         'mongodb'   => [
                                          'class'        => 'yii\mongodb\Connection',
-                                         'dsn'          => 'mongodb://127.0.0.1:27017/mydatabase',
+                                         'dsn'          => 'mongodb://mike:tlslpc@127.0.0.1:27017/admin',
                                         ],
 
-                    'db'        => [
-                                     'class'       => 'yii\db\Connection',
-                                     'dsn'         => 'mysql:host=121.41.37.43;dbname=d_wework',
-                                     'username'    => 'wework_admin',
-                                     'password'    => '7y8E09gRYp*NY76Gug',
-                                     'charset'     => 'utf8',
-                                     'tablePrefix' => 't_wework_',
-                                    ],
-                        ],
+                         'db'        => [
+                                         'class'        => 'yii\db\Connection',
+                                         'dsn'          => 'mysql:host=127.0.0.1;dbname=test',
+                                         'username'     => 'root',
+                                         'password'     => '',
+                                         'charset'      => 'utf8',
+                                         'tablePrefix'  => 't_mike_',
+                                        ],
+                         ],
 ];
